@@ -1,0 +1,85 @@
+.card {
+  --c: #888;
+  position: relative;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 35%, var(--surface)), var(--surface) 60%);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pop 0.3s ease both;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--c) 50%, transparent);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.card-id {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-weight: 800;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.fav {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--muted);
+  transition: transform 0.15s;
+}
+
+.fav:hover {
+  transform: scale(1.25);
+}
+
+.fav.on {
+  color: #facc15;
+}
+
+.card-img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin: 14px auto 4px;
+  display: block;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
+}
+
+.card h3 {
+  margin: 4px 0 8px;
+}
+
+.mini-stats {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.mini-stats li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mini-stats b {
+  color: var(--text);
+}

@@ -1,0 +1,40 @@
+.filters {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.type-filter,
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.chip {
+  --c: var(--accent);
+  background: var(--surface);
+  border: 2px solid var(--c);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+}
+
+.chip.active {
+  background: var(--c);
+  color: #fff;
+  font-weight: 700;
+}
+
+.filter-row select {
+  background: var(--surface);
+  border: 2px solid var(--surface-2);
+  border-radius: 8px;
+  padding: 5px 8px;
+}

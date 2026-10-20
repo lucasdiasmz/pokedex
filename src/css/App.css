@@ -1,0 +1,61 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px 0;
+}
+
+.header h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 1px;
+}
+
+.ball {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(#ef4444 46%, #222 46% 54%, #fff 54%);
+  border: 3px solid #222;
+  display: inline-block;
+}
+
+.header nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.header nav button {
+  background: var(--surface);
+  border: 1px solid var(--surface-2);
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.header nav button:hover {
+  transform: translateY(-2px);
+  background: var(--surface-2);
+}
+
+.header nav button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.count {
+  color: var(--muted);
+  margin: 8px 0 14px;
+}

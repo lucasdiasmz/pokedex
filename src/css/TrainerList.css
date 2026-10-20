@@ -1,0 +1,60 @@
+.trainers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.trainer {
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.trainer header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.trainer h3 {
+  margin: 0;
+}
+
+.badges-count {
+  background: var(--surface-2);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.team {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  background: var(--surface-2);
+  border: none;
+  border-radius: 12px;
+  padding: 6px 4px;
+  font-size: 0.72rem;
+  transition: transform 0.15s;
+}
+
+.team-member:hover {
+  transform: translateY(-3px);
+}
+
+.team-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}

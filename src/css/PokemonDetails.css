@@ -1,0 +1,115 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  z-index: 10;
+  animation: fade 0.2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.modal {
+  --c: #888;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 40%, var(--surface)), var(--surface) 55%);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: var(--surface-2);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modal-head .card-id {
+  position: static;
+}
+
+.modal-head h2 {
+  margin: 2px 0 8px;
+  font-size: 1.8rem;
+}
+
+.modal-head .badges {
+  justify-content: flex-start;
+}
+
+.modal-img {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.4));
+}
+
+.stats {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 90px 36px 1fr;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.stat-label {
+  color: var(--muted);
+}
+
+.stat-value {
+  font-weight: 800;
+}
+
+.stat-track {
+  height: 10px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 999px;
+  animation: grow 0.6s ease;
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+}
+
+.total,
+.owners {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
