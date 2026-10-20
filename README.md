@@ -31,10 +31,12 @@ Os dados estão em `src/data/pokedex-data.json` (Pokémon, tipos e treinadores).
 
 ```text
 src/
-├── components/   # SearchBar, Filters, PokemonList, PokemonCard, PokemonDetails, TrainerList, ...
+├── components/   # Header, SearchBar, Filters, PokemonList, PokemonCard, PokemonDetails,
+│                 # StatBar, TypeBadge, PokemonImage, TrainerList, TrainerCard
 ├── css/          # um CSS por componente / tela
 ├── data/         # pokedex-data.json
 ├── utils.js      # cores de tipos, rótulos e helpers
+├── index.css     # tema claro/escuro e estilos globais
 ├── App.jsx       # estados (busca, filtro, ordenação, favoritos, tema) e composição
 └── main.jsx
 ```

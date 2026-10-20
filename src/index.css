@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ----- Tema escuro (padrão) ----- */
+:root,
+[data-theme='dark'] {
+  --bg: #0f1220;
+  --bg-gradient: radial-gradient(circle at 15% 0%, #2a1530 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, #12263f 0%, transparent 40%);
+  --surface: #191d2e;
+  --surface-2: #232840;
+  --border: #2e3450;
+  --text: #eef0f8;
+  --text-muted: #9aa0bb;
+  --accent: #ef3b3b;
+  --accent-soft: rgba(239, 59, 59, 0.15);
+  --gold: #ffcb05;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ----- Tema claro ----- */
+[data-theme='light'] {
+  --bg: #f3f4f9;
+  --bg-gradient: radial-gradient(circle at 15% 0%, #ffe3e3 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, #e1ecff 0%, transparent 40%);
+  --surface: #ffffff;
+  --surface-2: #eef0f6;
+  --border: #dde0ea;
+  --text: #1b1e2c;
+  --text-muted: #636a85;
+  --accent: #e3350d;
+  --accent-soft: rgba(227, 53, 13, 0.1);
+  --gold: #d9a400;
+  --shadow: 0 10px 25px rgba(30, 35, 60, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  background-color: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text);
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Botão padrão reaproveitado em várias telas */
+.action-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.action-btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.action-btn.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}

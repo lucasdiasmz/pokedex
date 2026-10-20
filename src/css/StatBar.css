@@ -1,0 +1,44 @@
+.stat-bar {
+  display: grid;
+  grid-template-columns: 8.5rem 2.5rem 1fr;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: 700;
+  text-align: right;
+}
+
+.stat-track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 999px;
+  animation: grow 0.7s ease-out;
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-bar {
+    grid-template-columns: 6.5rem 2.2rem 1fr;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}

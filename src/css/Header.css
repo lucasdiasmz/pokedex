@@ -1,0 +1,109 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(90deg, #c81d25 0%, #ef3b3b 60%, #ff6b4a 100%);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(200, 29, 37, 0.35);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Pokébola desenhada só com CSS */
+.pokeball {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid #1b1e2c;
+  background: linear-gradient(to bottom, #fff 0 45%, #1b1e2c 45% 55%, #fff 55% 100%);
+  position: relative;
+  animation: spin 6s linear infinite;
+}
+
+.pokeball::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #1b1e2c;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-btn.active {
+  background: #fff;
+  color: #c81d25;
+}
+
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+  transform: rotate(25deg);
+}
+
+@media (max-width: 480px) {
+  .brand h1 {
+    font-size: 1.3rem;
+  }
+  .nav-btn {
+    padding: 0.45rem 0.65rem;
+  }
+}

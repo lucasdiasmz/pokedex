@@ -1,0 +1,149 @@
+.pokemon-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Faixa colorida de acordo com o tipo principal */
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 55%;
+  background: linear-gradient(160deg, var(--type-color), transparent 85%);
+  opacity: 0.35;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--type-color);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-card > * {
+  position: relative;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 1.1rem;
+  transition: transform 0.15s;
+}
+
+.fav-btn:hover {
+  transform: scale(1.15);
+}
+
+.fav-btn.active {
+  color: var(--gold);
+}
+
+.card-image-wrap {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.25s;
+}
+
+.pokemon-card:hover .card-image {
+  transform: scale(1.08);
+}
+
+.image-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface-2);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
+.card-id {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.card-name {
+  margin: 0.1rem 0 0.5rem;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.card-types {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.card-stats {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
+}
+
+.card-stat {
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 0.3rem 0.2rem;
+  text-align: center;
+}
+
+.card-stat dt {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.card-stat dd {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+  .pokemon-card {
+    padding: 0.75rem 0.5rem;
+  }
+  .card-image-wrap {
+    width: 90px;
+    height: 90px;
+  }
+  .card-name {
+    font-size: 1rem;
+  }
+}

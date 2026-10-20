@@ -1,0 +1,96 @@
+.trainer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.1rem;
+}
+
+.trainer-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.trainer-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.trainer-avatar {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #c81d25, #ff6b4a);
+}
+
+.trainer-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.trainer-badges {
+  margin: 0.15rem 0 0;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.trainer-team {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.team-member {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.25rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--type-color) 30%, transparent), var(--surface-2));
+  transition: transform 0.15s, border-color 0.2s;
+}
+
+.team-member:hover {
+  transform: translateY(-3px);
+  border-color: var(--type-color);
+}
+
+.team-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  font-size: 0.8rem;
+}
+
+.team-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.team-id {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 400px) {
+  .trainer-list {
+    grid-template-columns: 1fr;
+  }
+}
